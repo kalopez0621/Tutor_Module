@@ -57,88 +57,83 @@ def build_practice_prompt(
     difficulty: str = "medium",
     original_question: str = ""
 ) -> str:
-    # 🔹 Base opening prompt
+    """
+    Creates a strong practice generation prompt that:
+    - Forces variety from the original question.
+    - Enforces multiple choice format.
+    - Enforces only one correct answer.
+    """
+
+    # Randomize correct answer label
+    correct_label = random.choice(["(A)", "(B)", "(C)", "(D)"])
+
     base_prompt = (
         f"You are a helpful and knowledgeable college-level tutor creating practice problems "
-        f"to reinforce student understanding of a concept.\n\n"
+        f"to reinforce understanding of a concept.\n\n"
         f"Course: {course}\n"
         f"Subject: {subject}\n"
         f"Concept: {concept}\n"
         f"Difficulty: {difficulty.capitalize()}\n\n"
         f"The student previously asked this question:\n"
         f"\"{original_question}\"\n\n"
-        f"Now, create a NEW practice problem that targets the same concept but is not identical "
-        f"to the student's example. Use different numbers, structures, or contexts.\n\n"
+        f"🚨 IMPORTANT Instructions:\n"
+        f"- You MUST create a completely new practice problem related to the same concept.\n"
+        f"- Do NOT simply reword, reuse, or slightly tweak the original problem.\n"
+        f"- Use different numbers, different structure, or a different real-world context.\n"
+        f"- Always use multiple choice format: (A), (B), (C), (D).\n"
+        f"- Only one option should be the correct answer.\n"
+        f"- Clearly state the correct answer.\n"
+        f"- After the answer, give a short, clear explanation of how to solve it.\n\n"
     )
 
-    # 🔹 Random correct answer label
-    possible_answers = ["(A)", "(B)", "(C)", "(D)"]
-    correct_label = random.choice(possible_answers)
-
-    # 🔹 Subject-specific instructions
-    if subject.lower() in ["math", "calculus", "college algebra", "dosage and calculation of medications", "geometry", "intermediate algebra", "pre-algebra", "precalculus", "statistics", "trigonometry"]:
+    if subject.lower() in ["math", "calculus", "college algebra", "dosage and calculation of medications",
+                            "geometry", "intermediate algebra", "pre-algebra", "precalculus", "statistics", "trigonometry"]:
         format_instructions = (
-            "🧠 Math Practice Instructions:\n"
-            "- Start with: `Practice Question:`\n"
-            "- Clearly describe the problem.\n"
-            "- For equations, always use separate lines like:\n"
-            "  $$ 2x + 3y = 7 $$\n"
-            "  $$ x - 4y = 1 $$\n"
-            "- Use LaTeX formatting for all math expressions.\n"
-            "- Provide four multiple-choice options labeled:\n"
-            "  (A) ...\n"
-            "  (B) ...\n"
-            "  (C) ...\n"
-            "  (D) ...\n"
-            "- After options, insert a separator:\n"
-            "---\n"
-            "- Then show:\n"
-            f"Answer: {correct_label}\n"
-            "- After Answer, include a detailed step-by-step solution:\n"
-            "- Use line breaks and LaTeX formatting for solving steps, e.g.,\n"
-            "  $$ 2x + 3y = 7 $$\n"
-            "  $$ x = 4y + 1 $$\n"
-            "- Keep each solving step on its own line.\n"
-        )
-
-    elif subject.lower() in ["anatomy", "anatomy & physiology", "biology", "chemistry", "organic chemistry", "physics"]:
-        format_instructions = (
-            "🔬 Science Practice Instructions:\n"
-            "- Start with: `Practice Question:`\n"
-            "- Pose a science question based on the concept.\n"
-            "- If helpful, mention inserting a diagram like '[Insert diagram of cell]' or '[Insert periodic table segment]'.\n"
-            "- Use four multiple-choice options labeled (A), (B), (C), (D).\n"
-            "- Only one answer must be correct.\n"
-            "- Then write:\n"
+            "🧠 Math Format:\n"
+            "- Practice Question:\n"
+            "- Write the math problem clearly using LaTeX formatting (`$$ ... $$`).\n"
+            "- Structure equations on multiple lines if needed.\n"
+            "- Provide multiple-choice answers labeled (A), (B), (C), (D).\n"
+            "- Only one correct answer.\n"
             "---\n"
             f"Answer: {correct_label}\n"
-            "Explanation: Short and clear explanation referencing key scientific facts.\n"
+            "Explanation: Brief, step-by-step solution using LaTeX where appropriate.\n"
         )
 
-    elif subject.lower() in ["college reading", "esl", "writing", "english"]:
+    elif subject.lower() in ["biology", "anatomy & physiology", "chemistry", "organic chemistry", "physics"]:
         format_instructions = (
-            "📖 English Practice Instructions:\n"
-            "- Start with: `Practice Question:`\n"
-            "- Create a reading, grammar, writing revision, or comprehension-based question.\n"
-            "- Prefer multiple-choice if possible, but short answer is acceptable.\n"
-            "- Provide four options if multiple choice:\n"
-            "  (A) ...\n  (B) ...\n  (C) ...\n  (D) ...\n"
-            "- Then write:\n"
+            "🔬 Science Format:\n"
+            "- Practice Question:\n"
+            "- Ask a concept-related question.\n"
+            "- Include a diagram reference if helpful: '[Insert labeled diagram]'.\n"
+            "- Provide multiple-choice answers labeled (A), (B), (C), (D).\n"
             "---\n"
-            f"Answer: {correct_label if random.random() > 0.4 else 'Corrected sentence: ...'}\n"
-            "Explanation: Explain why the correct answer is the best or how the revision improves writing.\n"
+            f"Answer: {correct_label}\n"
+            "Explanation: Short and clear explanation, referencing key scientific facts.\n"
+        )
+
+    elif subject.lower() in ["english", "college reading", "writing", "esl"]:
+        format_instructions = (
+            "📝 English Format:\n"
+            "- Practice Question:\n"
+            "- Provide a grammar correction, thesis identification, or writing improvement task.\n"
+            "- Use either:\n"
+            "  - Multiple choice (preferred), or\n"
+            "  - Short answer if necessary.\n"
+            "---\n"
+            f"Answer: {correct_label if random.random() > 0.5 else 'Corrected sentence: ...'}\n"
+            "Explanation: Why the answer is correct or what was improved.\n"
         )
 
     else:
         format_instructions = (
-            "📘 General Practice Instructions:\n"
-            "- Start with: `Practice Question:`\n"
-            "- Create a general problem based on the concept.\n"
-            "- Use plain language.\n"
-            "- Then write:\n"
+            "📘 General Format:\n"
+            "- Practice Question:\n"
+            "- Write a clear conceptual question.\n"
+            "- Provide multiple choice answers.\n"
             "---\n"
             f"Answer: {correct_label}\n"
-            "Explanation: Briefly explain why this is the correct answer.\n"
+            "Explanation: Short explanation why the answer is correct.\n"
         )
 
     return base_prompt + format_instructions
