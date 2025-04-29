@@ -8,14 +8,14 @@ def get_gemma_response(question: str) -> str:
     url = "http://localhost:11434/api/generate"
     headers = {"Content-Type": "application/json"}
     payload = {
-        "model": "gemma3:1b", #gemma3:4b
+        "model": "gemma3:4b", #gemma3:4b
         "prompt": question,
         "stream": False
     }
 
     try:
         print("Sending request to Ollama...")  # NEW: debug print
-        response = requests.post(url, json=payload, headers=headers, timeout=90)  # NEW: 30s timeout
+        response = requests.post(url, json=payload, headers=headers, timeout=180)  # NEW: 90s timeout
         response.raise_for_status()
         result = response.json()
         print("Received response from Ollama.")  # NEW: debug print
