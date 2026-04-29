@@ -8,7 +8,7 @@ def get_gemma_response(question: str) -> str:
     url = "http://localhost:11434/api/generate"
     headers = {"Content-Type": "application/json"}
     payload = {
-        "model": "gemma3:4b", #gemma3:4b
+        "model": "gemma:2b", #gemma3:4b
         "prompt": question,
         "stream": False
     }

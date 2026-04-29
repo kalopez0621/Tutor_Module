@@ -1223,5 +1223,61 @@
     "question": "The student answered this follow-up question: 'Mean because I don't see an outlier'. Please give brief feedback on whether their answer is correct or not, and explain why.",
     "response": "Okay, let\u2019s tackle this!\n\n**Feedback on the Student's Answer: \u201cMean because I don\u2019t see an outlier.\u201d**\n\nYour answer is a good *starting* point, but it\u2019s not quite a complete and accurate explanation for why the mean is the appropriate measure of central tendency in this situation. \n\n**Here\u2019s why:**\n\nThe mean (also known as the average) is the most suitable measure of central tendency when there are *no* outliers significantly impacting the data. Outliers are extreme values that can pull the mean away from the \u201ctypical\u201d value of the dataset. \n\nThe fact that you don\u2019t see an outlier *suggests* the data is relatively symmetrical and centered. However, simply *not* seeing an outlier doesn't *prove* that the mean is the best choice. \n\n**Here\u2019s a more complete explanation:**\n\n*   **The Mean\u2019s Definition:** The mean is calculated by summing all the values in a dataset and then dividing by the number of values. Because it uses *every* data point in its calculation, it's a good choice when all values are relatively similar.\n*   **When Outliers Matter:** If there\u2019s a very large or very small value (an outlier), it disproportionately influences the mean, making it a less representative measure of the \u201ccenter\u201d of the data. In such cases, the median (the middle value) is usually a better choice because it's not affected by extreme values. \n\n**Think of it this way:** The mean is like a fair scale \u2013 it balances all the weights equally. An outlier is like one person suddenly weighing a huge amount, skewing the scale. \n\n\n**Follow-up Check-in Question:**\n\nImagine you're looking at the salaries of employees at a small company. You discover that one employee earns $1,000,000 per year \u2013 significantly more than the other employees who earn around $50,000 - $80,000.  Which measure of central tendency \u2013 the mean or the median \u2013 would be more appropriate for describing the \u201ctypical\u201d salary at this company and *why*?  Explain your reasoning. \n\n---\n\nWould you like me to elaborate on any of this, or perhaps work through a different example?",
     "concept": "what"
+  },
+  {
+    "timestamp": "2025-04-30T20:27:59.949224",
+    "student_id": "guest_user",
+    "course": " ",
+    "question": "What is the Pythagorean theorem?",
+    "response": "Okay, let's break down the Pythagorean Theorem. It\u2019s a fundamental concept in geometry, and it\u2019s surprisingly elegant!\n\n**What is the Pythagorean Theorem?**\n\nThe Pythagorean Theorem describes the relationship between the sides of a *right-angled triangle*.  A right-angled triangle is a triangle that has one angle that is exactly 90 degrees (a right angle).\n\n*   The side *opposite* the right angle is called the *hypotenuse*. We usually label the hypotenuse as 'c'.\n*   The other two sides are called *legs* (sometimes referred to as 'a' and 'b').\n\nThe theorem states:\n\n$$a^2 + b^2 = c^2$$\n\nLet\u2019s break that down:\n\n*   $a$ and $b$ are the lengths of the legs of the right triangle.\n*   $c$ is the length of the hypotenuse (the side opposite the right angle).\n*   The equation says that if you square the length of each leg and then add those squares together, you'll get the square of the hypotenuse's length.\n\n**A Simple Example**\n\nLet\u2019s say we have a right-angled triangle with legs of length 3 and 4.  Let\u2019s find the length of the hypotenuse (c).\n\n1.  **Identify the legs:** Let $a = 3$ and $b = 4$.\n2.  **Apply the theorem:**  $a^2 + b^2 = c^2$\n3.  **Substitute the values:** $3^2 + 4^2 = c^2$\n4.  **Calculate the squares:** $9 + 16 = c^2$\n5.  **Add:** $25 = c^2$\n6.  **Solve for c:**  Take the square root of both sides:  $c = \\sqrt{25} = 5$\n\nSo, the hypotenuse of the triangle is 5.\n\n**Key Points**\n\n*   The Pythagorean Theorem *only* applies to right-angled triangles.\n*   It's a powerful tool for calculating side lengths when you know the other two sides.\n\n\n\nDo you understand each step, or would you like to try a similar example?",
+    "concept": "what"
+  },
+  {
+    "timestamp": "2026-04-28T20:49:18.362043",
+    "student_id": "guest_001",
+    "course": "unknown",
+    "question": "Explain how to solve 2x + 5 = 15",
+    "response": "[Error communicating with Gemma via Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)]",
+    "concept": "explain"
+  },
+  {
+    "timestamp": "2026-04-28T20:50:32.642332",
+    "student_id": "guest_001",
+    "course": "unknown",
+    "question": "Explain how to solve 2x + 5 = 15",
+    "response": "[Error communicating with Gemma via Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)]",
+    "concept": "explain"
+  },
+  {
+    "timestamp": "2026-04-29T18:07:56.722601",
+    "student_id": "test1",
+    "course": "calc101",
+    "question": "What is a derivative?",
+    "response": "[Error communicating with Gemma via Ollama: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=180)]",
+    "concept": "derivatives"
+  },
+  {
+    "timestamp": "2026-04-29T18:16:09.626162",
+    "student_id": "test1",
+    "course": "calc101",
+    "question": "What is a derivative?",
+    "response": "[Error communicating with Gemma via Ollama: 404 Client Error: Not Found for url: http://localhost:11434/api/generate]",
+    "concept": "derivatives"
+  },
+  {
+    "timestamp": "2026-04-29T18:23:07.495663",
+    "student_id": "test1",
+    "course": "calc101",
+    "question": "What is a derivative?",
+    "response": "Sure, here's a step-by-step explanation of what a derivative is along with an example:\n\n**Definition:**\n\nA derivative represents the instantaneous rate of change of a function. It tells us how quickly the function's output changes with respect to the change in its input.\n\n**Notation:**\n\n$$f'(x)$$\n\n**Example:**\n\nLet's consider the function $$f(x) = x^2$$\n\nThe derivative of this function is:\n\n$$f'(x) = \\frac{d}{dx}(x^2) = 2x$$\n\nThis means that the function's output changes by 2 units for every unit change in its input.\n\n**Do you understand each step, or would you like to try a similar example?**",
+    "concept": "derivatives"
+  },
+  {
+    "timestamp": "2026-04-29T18:55:50.354230",
+    "student_id": "guest_user",
+    "course": " ",
+    "question": "How do I use the Pythagorean theorem?",
+    "response": "Sure, here is a step-by-step explanation of how to use the Pythagorean theorem:\n\n**Step 1: Identify the known sides.**\n\nThe Pythagorean theorem states that in any right triangle with sides a, b, and c, the square of the longest side (c) is equal to the sum of the squares of the other two sides (a and b). \n\n$$c^2 = a^2 + b^2$$\n\n\n**Step 2: Apply the Pythagorean theorem.**\n\nIn our case, we are looking to find the length of the side c. \n\n$$c = \\sqrt{a^2 + b^2}$$\n\n**Step 3: Substitute the known values into the Pythagorean theorem.**\n\n$$c = \\sqrt{a^2 + b^2}$$\n\n\n**Step 4: Simplify the expression.**\n\n$$c = \\sqrt{a^2 + b^2}$$\n\n**Do you understand each step, or would you like to try a similar example?**",
+    "concept": "pythagorean"
   }
 ]
