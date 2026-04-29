@@ -6,13 +6,8 @@ An AI-powered tutoring system that provides personalized, step-by-step academic 
 
 ## Demo
 
-<!-- Add screenshots here. Recommended: -->
-<!-- 1. The Streamlit UI with a question filled in -->
-<!-- 2. A rendered tutor response (the Pythagorean theorem example works well) -->
-<!-- 3. The practice question / follow-up flow -->
-
-![Tutor UI](screenshots\ui.PNG)
-![Tutor Response](screenshots\response.PNG)
+![Tutor UI](screenshots/ui.PNG)
+![Tutor Response](screenshots/response.PNG)
 
 ---
 
@@ -89,9 +84,12 @@ Tutor Module/
 │   ├── user_manager.py     # Student profile management
 │   ├── tutor_ui.py         # Streamlit frontend
 │   └── test_api.py         # API smoke tests
+├── screenshots/            # README images
 ├── static/                 # Static assets
 ├── qa_history.json         # Interaction log (gitignored)
 ├── user_profiles.json      # User profiles (gitignored)
+├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
