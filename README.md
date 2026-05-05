@@ -12,18 +12,19 @@
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
-2. [Key Features](#key-features)
-3. [System Architecture](#system-architecture)
-4. [Project Structure](#project-structure)
-5. [Technology Stack](#technology-stack)
-6. [Installation & Setup](#installation--setup)
-7. [How to Run the Application](#how-to-run-the-application)
-8. [API Endpoints](#api-endpoints)
-9. [Module Breakdown](#module-breakdown)
-10. [User Interface](#user-interface)
-11. [What Has Been Done (Completed Work)](#what-has-been-done-completed-work)
-12. [Future Expansion](#future-expansion)
-13. [License & Acknowledgments](#license--acknowledgments)
+2. [Scope and Pivot](#scope-and-pivot)
+3. [Key Features](#key-features)
+4. [System Architecture](#system-architecture)
+5. [Project Structure](#project-structure)
+6. [Technology Stack](#technology-stack)
+7. [Installation & Setup](#installation--setup)
+8. [How to Run the Application](#how-to-run-the-application)
+9. [API Endpoints](#api-endpoints)
+10. [Module Breakdown](#module-breakdown)
+11. [User Interface](#user-interface)
+12. [What Has Been Done (Completed Work)](#what-has-been-done-completed-work)
+13. [Future Expansion](#future-expansion)
+14. [License & Acknowledgments](#license--acknowledgments)
 
 ---
 
@@ -66,6 +67,18 @@ The system was built with a modular subject-detection layer. Phase 1 supports:
 - **English:** College Reading, Writing, ESL, English Composition
 - **Science:** Biology, Anatomy & Physiology, Chemistry, Organic Chemistry, Physics
 - **General:** fallback for any other subject
+
+---
+
+## Scope and pivot
+
+The original proposal (see [`docs/original_proposal.pdf`](docs/original_proposal.pdf)) called for a system built on Together.ai's LlamaTutor framework with cloud LLM access, LMS integration, knowledge graphs, and a multi-phase deployment.
+
+**LLM standardization (class-wide constraint).** The Tutor Module was one component in a larger Skyy MDC system being built across the class. Because the components had to interoperate, the cohort standardized on a single locally-runnable LLM — Gemma via Ollama. This shifted the architecture from a cloud API-based system to a local-first, self-hosted one, which had a real benefit for the educational use case: student questions never leave the local machine, which matters for FERPA-sensitive tutoring data.
+
+**Scope reduction (single-semester reality).** Phase 1 — what's in this repo — delivers the working tutoring loop: subject-aware prompts, practice generation, curated resources, history persistence, and a Streamlit UI. LMS integration, OAuth, knowledge graphs, and adaptive learning paths are documented in [Future Expansion](#future-expansion).
+
+**What stayed the same:** The core problem — giving MDC students 24/7 tutoring support that complements Brainfuse — and the modular architecture that lets future phases plug in without refactoring.
 
 ---
 
